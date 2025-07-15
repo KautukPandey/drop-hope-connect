@@ -8,20 +8,20 @@ import { Heart, User, Users } from "lucide-react";
 import Navbar from "@/components/Navbar";
 
 const Login = () => {
-  const [userType, setUserType] = useState<"user" | "ngo">("user");
+  const [userType, setUserType] = useState("user");
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Login attempt:", { userType, ...formData });
     // TODO: Implement login logic with Supabase
