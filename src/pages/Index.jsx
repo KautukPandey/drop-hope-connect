@@ -59,52 +59,54 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <div className="min-h-screen bg-background">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex justify-center mb-6">
-            <div className="bg-blue-600 p-4 rounded-full">
-              <Heart className="text-white" size={32} />
+      <section className="relative section-spacing bg-gradient-to-br from-blue-50 via-white to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex justify-center mb-8">
+              <div className="bg-blue-600 p-4 rounded-full shadow-lg">
+                <Heart className="text-white" size={40} />
+              </div>
             </div>
-          </div>
-          
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Every Drop of Hope
-            <span className="text-blue-600"> Matters</span>
-          </h1>
-          
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Connect your generosity with verified NGOs making real impact. 
-            Together, we're creating ripples of change that transform communities worldwide.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8">
-              <Link to="/donate">Start Giving Today</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8">
-              <Link to="/campaigns">Explore Campaigns</Link>
-            </Button>
+            
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Every Drop of Hope
+              <span className="text-blue-600 block"> Matters</span>
+            </h1>
+            
+            <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+              Connect your generosity with verified NGOs making real impact. 
+              Together, we're creating ripples of change that transform communities worldwide.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
+                <Link to="/donate">Start Giving Today</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3 border-2">
+                <Link to="/campaigns">Explore Campaigns</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="section-spacing bg-white border-y">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <stat.icon className="text-blue-600" size={24} />
+                  <div className="bg-blue-100 p-4 rounded-full">
+                    <stat.icon className="text-blue-600" size={28} />
                   </div>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -112,72 +114,74 @@ const Index = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-blue-700">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
-          <p className="text-xl leading-relaxed mb-8">
-            We believe in the power of collective action. DropHope bridges the gap between 
-            generous hearts and meaningful causes, ensuring every donation creates maximum impact 
-            through transparency, trust, and technology.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center">
-              <div className="bg-white/20 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Heart size={24} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Transparency</h3>
-              <p className="text-blue-100">Track every donation and see real impact through detailed reporting</p>
-            </div>
+      <section className="section-spacing hero-gradient text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Mission</h2>
+            <p className="text-xl leading-relaxed mb-12 opacity-95">
+              We believe in the power of collective action. DropHope bridges the gap between 
+              generous hearts and meaningful causes, ensuring every donation creates maximum impact 
+              through transparency, trust, and technology.
+            </p>
             
-            <div className="text-center">
-              <div className="bg-white/20 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Users size={24} />
+            <div className="grid md:grid-cols-3 gap-8 mt-16">
+              <div className="text-center">
+                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                  <Heart size={32} />
+                </div>
+                <h3 className="text-2xl font-semibold mb-4">Transparency</h3>
+                <p className="text-blue-100 leading-relaxed">Track every donation and see real impact through detailed reporting</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Community</h3>
-              <p className="text-blue-100">Connect with like-minded donors and verified NGOs worldwide</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="bg-white/20 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Target size={24} />
+              
+              <div className="text-center">
+                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                  <Users size={32} />
+                </div>
+                <h3 className="text-2xl font-semibold mb-4">Community</h3>
+                <p className="text-blue-100 leading-relaxed">Connect with like-minded donors and verified NGOs worldwide</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Impact</h3>
-              <p className="text-blue-100">Every donation is optimized for maximum social impact</p>
+              
+              <div className="text-center">
+                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                  <Target size={32} />
+                </div>
+                <h3 className="text-2xl font-semibold mb-4">Impact</h3>
+                <p className="text-blue-100 leading-relaxed">Every donation is optimized for maximum social impact</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Campaigns */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Campaigns</h2>
-            <p className="text-xl text-gray-600">
+      <section className="section-spacing bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Featured Campaigns</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Discover urgent causes that need your support right now
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {featuredCampaigns.map((campaign) => (
-              <Card key={campaign.id} className="hover:shadow-lg transition-shadow">
+              <Card key={campaign.id} className="card-hover overflow-hidden">
                 <div className="relative">
                   <img 
                     src={campaign.image} 
                     alt={campaign.title}
-                    className="w-full h-48 object-cover rounded-t-lg"
+                    className="w-full h-48 object-cover"
                   />
-                  <Badge className="absolute top-4 left-4 bg-blue-600">
+                  <Badge className="absolute top-4 left-4 bg-blue-600 hover:bg-blue-700">
                     {campaign.category}
                   </Badge>
                 </div>
                 
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center space-x-1">
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="text-sm text-gray-600">{campaign.rating}</span>
+                      <span className="text-sm font-medium text-gray-600">{campaign.rating}</span>
                     </div>
                     <div className="flex items-center text-sm text-gray-500">
                       <Calendar className="w-4 h-4 mr-1" />
@@ -185,33 +189,33 @@ const Index = () => {
                     </div>
                   </div>
                   
-                  <CardTitle className="text-xl mb-2">{campaign.title}</CardTitle>
-                  <p className="text-gray-600 text-sm mb-2">{campaign.organization}</p>
+                  <CardTitle className="text-xl mb-3 leading-tight">{campaign.title}</CardTitle>
+                  <p className="text-gray-600 text-sm mb-2 font-medium">{campaign.organization}</p>
                   <p className="text-gray-700 text-sm leading-relaxed">{campaign.description}</p>
                 </CardHeader>
                 
-                <CardContent>
+                <CardContent className="pt-0">
                   <div className="space-y-4">
                     <div>
-                      <div className="flex justify-between text-sm text-gray-600 mb-2">
+                      <div className="flex justify-between text-sm text-gray-600 mb-2 font-medium">
                         <span>Raised: ${campaign.raised.toLocaleString()}</span>
                         <span>Goal: ${campaign.goal.toLocaleString()}</span>
                       </div>
-                      <Progress value={(campaign.raised / campaign.goal) * 100} className="h-2" />
+                      <Progress value={(campaign.raised / campaign.goal) * 100} className="h-3" />
                     </div>
                     
                     <div className="flex items-center justify-between text-sm text-gray-600">
                       <div className="flex items-center">
                         <Users className="w-4 h-4 mr-1" />
-                        {campaign.donors} donors
+                        <span className="font-medium">{campaign.donors} donors</span>
                       </div>
                       <div className="flex items-center">
                         <TrendingUp className="w-4 h-4 mr-1" />
-                        {Math.round((campaign.raised / campaign.goal) * 100)}% funded
+                        <span className="font-medium">{Math.round((campaign.raised / campaign.goal) * 100)}% funded</span>
                       </div>
                     </div>
                     
-                    <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                    <Button className="w-full bg-blue-600 hover:bg-blue-700 py-2">
                       Donate Now
                     </Button>
                   </div>
@@ -221,7 +225,7 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button asChild variant="outline" size="lg" className="px-8">
+            <Button asChild variant="outline" size="lg" className="px-8 py-3 border-2">
               <Link to="/campaigns">View All Campaigns</Link>
             </Button>
           </div>
@@ -229,21 +233,23 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-yellow-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Make a Difference?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Join thousands of donors who are already creating positive change in the world.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Link to="/signup">Get Started</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link to="/contact">Learn More</Link>
-            </Button>
+      <section className="section-spacing bg-gradient-to-r from-yellow-50 to-orange-50 border-y">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Ready to Make a Difference?
+            </h2>
+            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+              Join thousands of donors who are already creating positive change in the world.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-3">
+                <Link to="/signup">Get Started</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="px-8 py-3 border-2">
+                <Link to="/contact">Learn More</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
